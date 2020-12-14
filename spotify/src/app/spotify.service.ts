@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 //Dichiaro che il servizio è iniettabile agli altri componenti a partire dal componente root
 @Injectable({
@@ -14,7 +15,7 @@ export class SpotifyService {
     const url = `https://api.spotify.com/v1/search?q=${query}&type=track`;
     const headers = new HttpHeaders({
       Authorization:
-        'Bearer BQBs7YsU4GutpVvZWQKzZ9kAwri5FBS883Ba4q5dkDFM987RlLzR5cGfJwBnivPipuFd2ujW0lXGrf3r-YVEWUCFQNbURlMF1__p_zrUnj490ScOtQshuflFQPF-joRWsFTuNiD_AkrnyNlOjsfBiv3JssoAemHfGO7irCM1hLQcFWrslY337GqcFSychT9NR3xU_BoBJdygi_xmuTjv3nnxZlf3Zb6NignOYUW16E59KDVdK_ubdhU9YYdPVk_psHlRQGIJf-MwfQrg8dfaPJIO_bsgZbsJGI-U'
+        'BQAKqsRWUXvgr_snuzSx5qe2BYjuiLL8kkiL_-pxMydf5TUg0oASV51tDwKvZi9v5b8zK0g-Wka5YgsMrcGUT7f4yo2WPzt8yQ-5X-42nWstwuEUbE1zTB0DBIKc0DEMGLo75Q-tTjUWHScVl0-yMkFE6ldrfZPsKi_T9olkGf3-BFGryuEFpf0J4PfJPjf07w7a_7KnXURhdKlSnWaycw2BEkDKXWWuS_kNNuJnCMo9ALZsz3ns70gdft2LDKL6UvqlrUADj7hbRARpl3WzYmJ-YmVHyNR0gjn-'
     });
 
     let obsTracks = this.http.get(url, { headers });
